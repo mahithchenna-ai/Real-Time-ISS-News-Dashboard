@@ -1,33 +1,33 @@
 // Proxy to handle CORS/Mixed Content for HTTP APIs
 const SECURE_PROXY = 'https://api.allorigins.win/raw?url=';
 
-// Fetch ISS Location
+// Fetch ISS Location (Using HTTPS compatible API for deployment)
 export const fetchISSLocation = async () => {
   try {
-    const response = await fetch('http://api.open-notify.org/iss-now.json');
+    const response = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
     if (!response.ok) throw new Error('Network response was not ok');
     
     const data = await response.json();
-    if (data.message === 'success') {
-      return {
-        lat: parseFloat(data.iss_position.latitude),
-        lng: parseFloat(data.iss_position.longitude),
-        timestamp: data.timestamp
-      };
-    }
+    return {
+      lat: parseFloat(data.latitude),
+      lng: parseFloat(data.longitude),
+      timestamp: data.timestamp
+    };
   } catch (error) {
     console.error("Error fetching ISS location:", error);
   }
   return null;
 };
 
-// Fetch People in Space
+// Fetch People in Space (Using Proxy for HTTPS compatibility)
 export const fetchAstros = async () => {
   try {
-    const response = await fetch('http://api.open-notify.org/astros.json');
+    const url = encodeURIComponent('http://api.open-notify.org/astros.json');
+    const response = await fetch(`https://api.allorigins.win/get?url=${url}`);
     if (!response.ok) throw new Error('Network response was not ok');
     
-    const data = await response.json();
+    const wrapper = await response.json();
+    const data = JSON.parse(wrapper.contents);
     if (data.message === 'success') {
       return {
         number: data.number,
