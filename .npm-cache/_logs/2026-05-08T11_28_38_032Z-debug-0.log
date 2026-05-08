@@ -1,0 +1,26 @@
+0 verbose cli /Users/chennamahith/.nvm/versions/node/v20.19.6/bin/node /opt/homebrew/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.19.6
+3 silly config load:file:/opt/homebrew/Cellar/node@20/20.19.6/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/chennamahith/FOAI END-SEM/.npmrc
+5 silly config load:file:/Users/chennamahith/.npmrc
+6 silly config load:file:/opt/homebrew/etc/npmrc
+7 verbose title npm install
+8 verbose argv "install" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:/Users/chennamahith/FOAI END-SEM/.npm-cache/_logs/2026-05-08T11_28_38_032Z-
+10 verbose logfile /Users/chennamahith/FOAI END-SEM/.npm-cache/_logs/2026-05-08T11_28_38_032Z-debug-0.log
+11 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+12 silly logfile done cleaning log files
+13 http fetch GET https://registry.npmjs.org/npm attempt 1 failed with ENOTFOUND
+14 silly idealTree buildDeps
+15 silly fetch manifest react@^18.2.0
+16 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+17 http fetch GET https://registry.npmjs.org/react attempt 1 failed with ENOTFOUND
+18 http fetch GET https://registry.npmjs.org/npm attempt 2 failed with ENOTFOUND
+19 http fetch GET https://registry.npmjs.org/react attempt 2 failed with ENOTFOUND
+20 http fetch GET https://registry.npmjs.org/npm attempt 3 failed with ENOTFOUND
+21 http fetch GET https://registry.npmjs.org/react attempt 3 failed with ENOTFOUND
+22 silly fetch manifest react-dom@^18.2.0
+23 silly packumentCache full:https://registry.npmjs.org/react-dom cache-miss
+24 http fetch GET https://registry.npmjs.org/react-dom attempt 1 failed with ENOTFOUND
+25 http fetch GET https://registry.npmjs.org/react-dom attempt 2 failed with ENOTFOUND
